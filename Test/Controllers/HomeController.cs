@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Test.Models;
+using Test.ViewModels;
 
 namespace Test.Controllers
 {
@@ -12,17 +13,21 @@ namespace Test.Controllers
             _employeeRepository = employeeRepository;
         }
 
-        public string Index()
-        { 
-            return _employeeRepository.GetEmployee(1).Name;
+        public ViewResult Index()
+        {
+            var model = _employeeRepository.GetAllEmployee();
+            return View(model);
         }
 
         public ViewResult Details()
         {
-            Employee model = _employeeRepository.GetEmployee(1);
-            ViewBag.Employee = model;
-            ViewBag.PageTitle = "Employee Details";
-            return View();
+            var homeDetailsViewModel = new HomeDetailsViewModel
+            {
+                Employee = _employeeRepository.GetEmployee(1),
+                PageTitle = "Employee Details"
+            };
+
+            return View(homeDetailsViewModel);
         }
     }
 }
