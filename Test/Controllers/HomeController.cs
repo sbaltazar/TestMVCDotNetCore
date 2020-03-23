@@ -18,12 +18,12 @@ namespace Test.Controllers
             var model = _employeeRepository.GetAllEmployee();
             return View(model);
         }
-
-        public ViewResult Details()
+    
+        public ViewResult Details(int? id)
         {
             var homeDetailsViewModel = new HomeDetailsViewModel
             {
-                Employee = _employeeRepository.GetEmployee(1),
+                Employee = _employeeRepository.GetEmployee(id ?? 1),
                 PageTitle = "Employee Details"
             };
 
