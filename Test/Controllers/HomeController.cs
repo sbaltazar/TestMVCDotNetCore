@@ -16,7 +16,7 @@ namespace Test.Controllers
                               IHostingEnvironment hostingEnvironment)
         {
             _employeeRepository = employeeRepository;
-            this._hostingEnvironment = hostingEnvironment;
+            _hostingEnvironment = hostingEnvironment;
         }
 
         public ViewResult Index()
