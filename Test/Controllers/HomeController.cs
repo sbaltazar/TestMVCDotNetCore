@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Hosting;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -8,6 +9,7 @@ using Test.ViewModels;
 
 namespace Test.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly IEmployeeRepository _employeeRepository;
@@ -22,13 +24,15 @@ namespace Test.Controllers
             _hostingEnvironment = hostingEnvironment;
             _logger = logger;
         }
-
+        
+        [AllowAnonymous]
         public ViewResult Index()
         {
             var model = _employeeRepository.GetAllEmployee();
             return View(model);
         }
 
+        [AllowAnonymous]
         public ViewResult Details(int? id)
         {
 
@@ -84,7 +88,7 @@ namespace Test.Controllers
 
             return View();
         }
-
+      
         [HttpGet]
         public ViewResult Edit(int id)
         {
