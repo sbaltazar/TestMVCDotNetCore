@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using Test.Utilities;
 
 namespace Test.ViewModels
 {
@@ -12,7 +13,7 @@ namespace Test.ViewModels
         [Required]
         [EmailAddress]
         [Remote(action: "IsEmailInUse", controller: "Account")]
-
+        [ValidEmailDomain(allowedDomain: "bkn.cl", ErrorMessage = "Email domain must be bkn.cl")]
         public string Email { get; set; }
 
         [Required]
