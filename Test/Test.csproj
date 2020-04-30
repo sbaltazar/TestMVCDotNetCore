@@ -13,6 +13,8 @@
     <Compile Remove="Migrations\20200417005807_AddPhotoPathProperty.Designer.cs" />
     <Compile Remove="Migrations\20200417005853_AddSomeProperty.cs" />
     <Compile Remove="Migrations\20200417005853_AddSomeProperty.Designer.cs" />
+    <Compile Remove="Migrations\20200430043059_Extend_IdentityUser.cs" />
+    <Compile Remove="Migrations\20200430043059_Extend_IdentityUser.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
