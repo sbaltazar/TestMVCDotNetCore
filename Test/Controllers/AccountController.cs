@@ -117,5 +117,12 @@ namespace Test.Controllers
                 return Json($"The email {email} is already in use");
             }
         }
+
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult AccessDenied()
+        {
+            return View();
+        }
     }
 }
