@@ -270,5 +270,33 @@ namespace Test.Controllers
             }
         }
 
+        [HttpPost]
+        public async Task<IActionResult> DeleteUser(string id)
+        {
+            ApplicationUser user = await userManager.FindByIdAsync(id);
+
+            if (user == null)
+            {
+                ViewBag.ErrorMessage = $"User with Id = {user.Id} cannot be found";
+                return View("NotFound");
+            }
+            else
+            {
+                IdentityResult result = await userManager.DeleteAsync(user);
+
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("ListUsers");
+                }
+
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError(string.Empty, error.Description);
+                }
+
+                return View("ListUsers");
+            }
+        }
+
     }
 }
