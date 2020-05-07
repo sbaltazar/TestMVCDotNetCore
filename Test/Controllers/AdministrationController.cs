@@ -76,6 +76,8 @@ namespace Test.Controllers
         }
 
         [HttpGet]
+        [Authorize(Policy = "EditRolePolicy")]
+
         public async Task<IActionResult> EditRole(string id)
         {
 
@@ -105,6 +107,8 @@ namespace Test.Controllers
         }
 
         [HttpPost]
+        [Authorize(Policy = "EditRolePolicy")]
+
         public async Task<IActionResult> EditRole(EditRoleViewModel model)
         {
 
