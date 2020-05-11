@@ -13,7 +13,7 @@ namespace Test.ViewModels
         [Required]
         [EmailAddress]
         [Remote(action: "IsEmailInUse", controller: "Account")]
-        [ValidEmailDomain(allowedDomain: "bkn.cl", ErrorMessage = "Email domain must be bkn.cl")]
+        //[ValidEmailDomain(allowedDomain: "bkn.cl", ErrorMessage = "Email domain must be bkn.cl")]
         public string Email { get; set; }
 
         [Required]

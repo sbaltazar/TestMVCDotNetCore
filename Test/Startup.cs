@@ -35,7 +35,8 @@ namespace Test
 
                 options.SignIn.RequireConfirmedEmail = true;
             })
-            .AddEntityFrameworkStores<AppDbContext>();
+            .AddEntityFrameworkStores<AppDbContext>()
+            .AddDefaultTokenProviders();
 
             services.AddMvc(options =>
             {
