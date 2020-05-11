@@ -13,11 +13,11 @@ namespace Test.Controllers
     public class HomeController : Controller
     {
         private readonly IEmployeeRepository _employeeRepository;
-        private readonly IHostingEnvironment _hostingEnvironment;
+        private readonly IWebHostEnvironment _hostingEnvironment;
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(IEmployeeRepository employeeRepository,
-                              IHostingEnvironment hostingEnvironment,
+                              IWebHostEnvironment hostingEnvironment,
                               ILogger<HomeController> logger)
         {
             _employeeRepository = employeeRepository;
