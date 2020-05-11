@@ -86,6 +86,7 @@ namespace Test
 
             services.AddSingleton<IAuthorizationHandler, CanEditOnlyOtherAdminRolesAndClaimsHandler>();
             services.AddSingleton<IAuthorizationHandler, SuperAdminHandler>();
+            services.AddSingleton<DataProtectionPurposeStrings>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
