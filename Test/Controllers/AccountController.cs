@@ -142,7 +142,7 @@ namespace Test.Controllers
                     return View(model);
                 }
 
-                var result = await signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, lockoutOnFailure: false);
+                var result = await signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, lockoutOnFailure: true);
 
                 if (result.Succeeded)
                 {
@@ -154,6 +154,11 @@ namespace Test.Controllers
                     {
                         return RedirectToAction("index", "home");
                     }
+                }
+
+                if (result.IsLockedOut)
+                {
+                    return View("AccountLocked");
                 }
 
                 ModelState.AddModelError(string.Empty, "Invalid Login Attemt");
@@ -338,6 +343,11 @@ namespace Test.Controllers
 
                     if (result.Succeeded)
                     {
+                        if (await userManager.IsLockedOutAsync(user))
+                        {
+                            await userManager.SetLockoutEndDateAsync(user, DateTimeOffset.UtcNow);
+                        }
+
                         return View("ResetPasswordConfirmation");
                     }
 
