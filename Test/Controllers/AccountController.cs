@@ -188,7 +188,7 @@ namespace Test.Controllers
                 if (user != null && !user.EmailConfirmed)
                 {
                     ModelState.AddModelError(string.Empty, "Email not confirmed yet");
-                    return View(model);
+                    return View("Login", loginViewModel);
                 }
             }
 
