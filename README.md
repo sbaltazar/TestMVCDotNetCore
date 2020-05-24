@@ -6,7 +6,7 @@ made by Kudvenkat
 
 General topics in the project
 
-⋅⋅* ASP.NET Core poject file.
+* ASP.NET Core poject file.
 ⋅⋅* Middleware in .NET Core
 ⋅⋅* MVC
 ⋅⋅* Strong typed views
