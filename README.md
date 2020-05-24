@@ -7,17 +7,17 @@ made by Kudvenkat
 General topics in the project
 
 * ASP.NET Core poject file.
-⋅⋅* Middleware in .NET Core
-⋅⋅* MVC
-⋅⋅* Strong typed views
-⋅⋅* Attribute routing
-⋅⋅* Entity Framework Core
-⋅⋅* Logging
-⋅⋅* User loging and identity
-⋅⋅* User roles
-⋅⋅* Custom authorization
-⋅⋅* External authorization suing OAuth2 (Google, Facebook, etc)
-⋅⋅* Using tokens for authorization
+* Middleware in .NET Core
+* MVC
+* Strong typed views
+* Attribute routing
+* Entity Framework Core
+* Logging
+* User loging and identity
+* User roles
+* Custom authorization
+* External authorization suing OAuth2 (Google, Facebook, etc)
+* Using tokens for authorization
 
 
 
